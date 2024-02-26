@@ -69,12 +69,6 @@
         var signo1 = document.getElementById("selectorZodiacal").value;
         var signo2 = document.getElementById("zodiacalCompatible").value;
         switch (signo1) {
-          case "capricornio":
-            if (signo2 == "cancer" || signo2 == "tauro" || signo2 == "Virgo") {
-              goodResult();
-            } else {
-              badResult();
-            }
           case "acuario":
             if (
               signo2 == "aires" ||
@@ -195,6 +189,12 @@
             }
           case "sagitario":
             if (signo2 == "aries" || signo2 == "geminis" || signo2 == "leo") {
+              goodResult();
+            } else {
+              badResult();
+            }
+            case "capricornio":
+            if (signo2 == "cancer" || signo2 == "tauro" || signo2 == "Virgo") {
               goodResult();
             } else {
               badResult();
