@@ -1,0 +1,51 @@
+body {
+  background-color: #f3f8ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-size: contain;
+  position: relative;
+}
+.label-contenido {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px; /* Agrega un margen inferior para separar los elementos */
+}
+.label-contenido label {
+  margin-right: 10px;
+  width: 150px; /* Establece un ancho fijo para las etiquetas */
+  text-align: right; /* Alinea el texto a la derecha */
+}
+.label-contenido select {
+  width: 150px; /* Establece un ancho fijo para los selectores */
+}
+.label-contenido select:last-child {
+  margin-left: 10px; /* Agrega un margen izquierdo al último selector */
+}
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+#icono {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  background-color: transparent; /* Fondo transparente */
+  margin-top: 20px; /* Agrega un margen inferior para separar los elementos */
+}
+#nombreSigno, #descripSigno {
+  text-align: center;
+}
+h1{
+  font-family: fantasy;
+}
+p{
+  font-size: larger;
+  font-weight: 600;
+}

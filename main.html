@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--El tipo de caracteres que reconoce el navegador-->
+    <title>Ejercicio Zodiaco</title>
+    <!--De esta forma se vincula el script, ya no es necesario escribirlo aquí-->
+    <link rel="stylesheet" href="./index.js" />
+    <link rel="stylesheet" href="./style.css" />
+    <!--Vamos a usar Bootstrap para agilizar el diseño-->
+    <!--Bootstrap usa cambia el diseño mediante el uso de clases-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>El Horoscopo de Seiya</h1>
+    <!--Todo lleva su respectiva sangría para facilitar la lectura-->
+    <div class="label-contenido">
+      <label for="fechaNac"> Fecha de Nacimiento</label>
+      <!--El input type = "date" nos permite tomar fechas-->
+      <input type="date" id="fechaNac" class="form-control" />
+    </div>
+    <button
+      onclick="consultarHoroscopo()"
+      type="button"
+      class="btn btn-primary"
+    >
+      Consultar Horóscopo
+    </button>
+    <div class="info">
+      <!--Aqui va la imagen del signo-->
+      <img src="./img/Zodiaco/interro.png" id="icono" />
+    </div>
+    <h2 id="nombreSigno"></h2>
+    <p id="descripcionSigno"></p>
+    <form>
+      <div class="label-contenido">
+        <label for="signoZodiacal">Selecciona tu Signo</label>
+        <!--select es un menú desplegable y cada option es una opción que se desplegará-->
+        <select id="selectorZodiacal" class="form-select">
+          <option value="capricornio">Capricornio</option>
+          <option value="acuario">Acuario</option>
+          <option value="piscis">Piscis</option>
+          <option value="aries">Aries</option>
+          <option value="tauro">Tauro</option>
+          <option value="geminis">Géminis</option>
+          <option value="cancer">Cáncer</option>
+          <option value="leo">Leo</option>
+          <option value="virgo">Virgo</option>
+          <option value="libra">Libra</option>
+          <option value="escorpio">Escorpio</option>
+          <option value="sagitario">Sagitario</option>
+        </select>
+      </div>
+      <div class="label-contenido">
+        <label for="zodiacalCompatible">Signo Compatible</label>
+        <select id="zodiacalCompatible" class="form-select">
+          <option value="capricornio">Capricornio</option>
+          <option value="acuario">Acuario</option>
+          <option value="piscis">Piscis</option>
+          <option value="aries">Aries</option>
+          <option value="tauro">Tauro</option>
+          <option value="geminis">Géminis</option>
+          <option value="cancer">Cáncer</option>
+          <option value="leo">Leo</option>
+          <option value="virgo">Virgo</option>
+          <option value="libra">Libra</option>
+          <option value="escorpio">Escorpio</option>
+          <option value="sagitario">Sagitario</option>
+        </select>
+      </div>
+    </form>
+    <button
+      onclick="checarCompatibilidad()"
+      type="button"
+      class="btn btn-success"
+    >
+      Consultar Compatibilidad
+    </button>
+    <div class="info2">
+      <h2 id="resultado"></h2>
+      <p id="descriptionResult"></p>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
