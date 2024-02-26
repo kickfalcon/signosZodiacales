@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!--El tipo de caracteres que reconoce el navegador-->
+    <title>Ejercicio Zodiaco</title>
+    <!--SCRIPT-->
+    <script>
+      function consultarHoroscopo() {
+        var dia = parseInt(selectorDiaNac.value);
+        var mes = parseInt(selectorMesNac.value);
+        /*********La logica sigue intacta**********/
+        var valor = mes * 100 + dia;
+        // console.log(valor)
+        var name = "";
+        var description = "";
+        if ((valor < 1223 && valor > 1231) || (valor >= 101 && valor <= 119)) {
+          name = "capricornio";
+          description = "Los Capricornios son personas muy leales";
+          componentesImagen(name, description);
+        } else if (valor > 120 && valor < 218) {
+          name = "acuario";
+          description = "Los acuarios son personas muy mentirosas";
+          componentesImagen(name, description);
+        } else if (valor > 219 && valor < 320) {
+          name = "piscis";
+          description = "Los piscis son personas muy flojas";
+          componentesImagen(name, description);
+        } else if (valor > 321 && valor < 419) {
+          name = "aries";
+          description = "Los aries son personas muy creativos";
+          componentesImagen(name, description);
+        } else if (valor > 420 && valor < 520) {
+          name = "tauro";
+          description = "Los tauro son personas muy inteligentes";
+          componentesImagen(name, description);
+        } else if (valor > 521 && valor < 620) {
+          name = "geminis";
+          description = "Los géminis son personas muy malhumorados";
+          componentesImagen(name, description);
+        } else if (valor > 621 && valor < 722) {
+          name = "cancer";
+          description = "Los cáncer son personas muy talentosas";
+          componentesImagen(name, description);
+        } else if (valor > 723 && valor < 822) {
+          name = "leo";
+          description = "Los leo son personas muy confiables";
+          componentesImagen(name, description);
+        } else if (valor > 823 && valor < 922) {
+          name = "virgo";
+          description = "Los virgo son personas muy analíticas";
+          componentesImagen(name, description);
+        } else if (valor > 923 && valor < 1022) {
+          name = "libra";
+          description =
+            "Los libra son personas muy balanceadas y que entrenan a Shiru en las cascadas";
+          componentesImagen(name, description);
+        } else if (valor > 1023 && valor < 1121) {
+          name = "escorpio";
+          description = "Los escorpianos son personas muy irritantes";
+          componentesImagen(name, description);
+        } else if (valor > 1122 && valor < 1221) {
+          name = "sagitario";
+          description = "Los sagitarios son personas muy nobles";
+          componentesImagen(name, description);
+        }
+      }
+      function checarCompatibilidad() {
+        var signo1 = document.getElementById("selectorZodiacal").value;
+        var signo2 = document.getElementById("zodiacalCompatible").value;
+        switch (signo1) {
+          case "capricornio":
+            if (signo2 == "cancer" || signo2 == "tauro" || signo2 == "Virgo") {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "acuario":
+            if (
+              signo2 == "aires" ||
+              signo2 == "geminis" ||
+              signo2 == "leo" ||
+              signo2 == "libra"
+            ) {
+              goodResult();
+            } else {
+              badResult;
+            }
+          case "piscis":
+            if (
+              signo2 == "aries" ||
+              signo2 == "tauro" ||
+              signo2 == "cancer" ||
+              signo2 == "virgo" ||
+              signo2 == "escorpio" ||
+              signo2 == "piscis"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "aries":
+            if (
+              signo2 == "geminis" ||
+              signo2 == "leo" ||
+              signo2 == "libra" ||
+              signo2 == "sagitario" ||
+              signo2 == "acuario" ||
+              signo2 == "piscis"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "tauro":
+            if (
+              signo2 == "tauro" ||
+              signo2 == "cancer" ||
+              signo2 == "Virgo" ||
+              signo2 == "escorpio" ||
+              signo2 == "capricornio" ||
+              signo2 == "piscis"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "geminis":
+            if (
+              signo2 == "aries" ||
+              signo2 == "geminis" ||
+              signo2 == "libra" ||
+              signo2 == "sagitario" ||
+              signo2 == "acuario"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "cancer":
+            if (
+              signo2 == "cancer" ||
+              signo2 == "tauro" ||
+              signo2 == "escorpio" ||
+              signo2 == "capricornio" ||
+              signo2 == "piscis"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "leo":
+            if (
+              signo2 == "aries" ||
+              signo2 == "libra" ||
+              signo2 == "sagitario" ||
+              signo2 == "acuario"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "virgo":
+            if (
+              signo2 == "capricornio" ||
+              signo2 == "tauro" ||
+              signo2 == "piscis"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "libra":
+            if (
+              signo2 == "aries" ||
+              signo2 == "geminis" ||
+              signo2 == "leo" ||
+              signo2 == "libra" ||
+              signo2 == "acuario"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "escorpio":
+            if (
+              signo2 == "tauro" ||
+              signo2 == "cancer" ||
+              signo2 == "escorpio" ||
+              signo2 == "piscis"
+            ) {
+              goodResult();
+            } else {
+              badResult();
+            }
+          case "sagitario":
+            if (signo2 == "aries" || signo2 == "geminis" || signo2 == "leo") {
+              goodResult();
+            } else {
+              badResult();
+            }
+          default:
+            console.log("Sorry!");
+        }
+      }
+      function componentesImagen(signo, descripcion) {
+        icono.src = `img/zodiaco/${signo}.jpg`;
+        nombreSigno.innerHTML = signo.toUpperCase();
+        descripcionSigno.innerHTML = descripcion;
+      }
+      function goodResult() {
+        resultado.innerHTML = "¡Fantástico!";
+        descriptionResult.innerHTML = "¡Son altamente compatibles!";
+      }
+      function badResult() {
+        resultado.innerHTML = "¡Oh no!";
+        descriptionResult.innerHTML = "¡Esto no funcionará!";
+      }
+    </script>
+
+    <!--STYLE-->
+    <style>
+      /*codigo CSS*/
+
+      h1 {
+        font-size: 24px; /* Tamaño de fuente para h1 */
+        font-family: Arial, sans-serif; /* Fuente para h1 */
+        font-style: italic; /* Fuente en cursiva para h1 */
+        color: white;
+      }
+
+      h3 {
+        font-size: 24px; /* Tamaño de fuente para h3 */
+        font-family: Arial, sans-serif; /* Fuente para h3 */
+        font-style: italic; /* Fuente en cursiva para h3 */
+        color: white;
+      }
+
+      body {
+        background-image: url("img/Zodiaco/gala.jpg");
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 110vh;
+        margin: 0;
+        background-size: contain;
+        position: relative;
+      }
+
+      .label-contenido {
+        color: white;
+        display: inline-block;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px; /* Agrega un margen inferior para separar los elementos */
+      }
+
+      .label-contenido label {
+        margin-right: 10px;
+        width: 150px; /* Establece un ancho fijo para las etiquetas */
+        text-align: right; /* Alinea el texto a la derecha */
+      }
+
+      .label-contenido select {
+        width: 150px; /* Establece un ancho fijo para los selectores */
+      }
+
+      .label-contenido select:last-child {
+        margin-left: 10px; /* Agrega un margen izquierdo al último selector */
+      }
+
+      .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      #icono {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        background-color: transparent; /* Fondo transparente */
+        margin-top: 50px; /* Agrega un margen inferior para separar los elementos */
+      }
+
+      #nombreSigno,
+      #descripcionSigno {
+        text-align: center;
+        color: white;
+      }
+      .info2{
+        color: white;
+      }
+    </style>
+
+    <!--Vamos a usar Bootstrap para agilizar el diseño-->
+    <!--Bootstrap usa cambia el diseño mediante el uso de clases-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <h1>El Horóscopo de Seiya</h1>
+    <!--Todo lleva su respectiva sangría para facilitar la lectura-->
+    <div class="label-contenido">
+      <label for="selectorDiaNac">Día de nacimiento</label>
+      <select id="selectorDiaNac" class="form-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="1">6</option>
+        <option value="2">7</option>
+        <option value="3">8</option>
+        <option value="4">9</option>
+        <option value="5">10</option>
+        <option value="11">11</option>
+        <option value="12">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+        <option value="15">15</option>
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+        <option value="23">23</option>
+        <option value="24">24</option>
+        <option value="25">25</option>
+        <option value="26">26</option>
+        <option value="27">27</option>
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="31">31</option>
+      </select>
+    </div>
+    <div class="label-contenido">
+      <label for="selectorMesNac">Mes de nacimiento</label>
+      <select id="selectorMesNac" class="form-select">
+        <option value="1">Enero</option>
+        <option value="2">Febrero</option>
+        <option value="3">Marzo</option>
+        <option value="4">Abril</option>
+        <option value="5">Mayo</option>
+        <option value="6">Junio</option>
+        <option value="7">Julio</option>
+        <option value="8">Agosto</option>
+        <option value="9">Septiembre</option>
+        <option value="10">Octubre</option>
+        <option value="11">Noviembre</option>
+        <option value="12">Diciembre</option>
+      </select>
+    </div>
+    <button
+      onclick="consultarHoroscopo()"
+      type="button"
+      class="btn btn-primary"
+    >
+      Consultar Horóscopo
+    </button>
+    <div class="info">
+      <!--Aqui va la imagen del signo-->
+      <img src="./img/Zodiaco/interro.png" id="icono" />
+    </div>
+    <h2 id="nombreSigno"></h2>
+    <p id="descripcionSigno"></p>
+    <form>
+      <div class="label-contenido">
+        <label for="signoZodiacal">Selecciona tu Signo</label>
+        <!--select es un menú desplegable y cada option es una opción que se desplegará-->
+        <select id="selectorZodiacal" class="form-select">
+          <option value="capricornio">Capricornio</option>
+          <option value="acuario">Acuario</option>
+          <option value="piscis">Piscis</option>
+          <option value="aries">Aries</option>
+          <option value="tauro">Tauro</option>
+          <option value="geminis">Géminis</option>
+          <option value="cancer">Cáncer</option>
+          <option value="leo">Leo</option>
+          <option value="virgo">Virgo</option>
+          <option value="libra">Libra</option>
+          <option value="escorpio">Escorpio</option>
+          <option value="sagitario">Sagitario</option>
+        </select>
+      </div>
+      <div class="label-contenido">
+        <label for="zodiacalCompatible">Signo Compatible</label>
+        <select id="zodiacalCompatible" class="form-select">
+          <option value="capricornio">Capricornio</option>
+          <option value="acuario">Acuario</option>
+          <option value="piscis">Piscis</option>
+          <option value="aries">Aries</option>
+          <option value="tauro">Tauro</option>
+          <option value="geminis">Géminis</option>
+          <option value="cancer">Cáncer</option>
+          <option value="leo">Leo</option>
+          <option value="virgo">Virgo</option>
+          <option value="libra">Libra</option>
+          <option value="escorpio">Escorpio</option>
+          <option value="sagitario">Sagitario</option>
+        </select>
+      </div>
+    </form>
+    <button
+      onclick="checarCompatibilidad()"
+      type="button"
+      class="btn btn-success"
+    >
+      Consultar Compatibilidad
+    </button>
+    <div class="info2">
+      <h2 id="resultado"></h2>
+      <p id="descriptionResult"></p>
+    </div>
+  </body>
+</html>
